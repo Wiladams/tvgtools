@@ -1,0 +1,527 @@
+BLImage render(const BLContextCreateInfo & cci) {
+  BLImage img(200, 200, BL_FORMAT_PRGB32);
+  BLContext ctx(img, cci);
+  ctx.clearAll();
+  ctx.setFillStyle(BLRgba32(0xFFffffff));
+  ctx.fillAll();
+
+  BLPoint vtxOut;
+
+  do {
+BLPath segment;
+segment.moveTo(50.000, 10.000);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(150.000, vtxOut.y);
+segment.lineTo(175.000,35.000);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 165.000);
+segment.lineTo(150.000,190.000);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(50.000, vtxOut.y);
+segment.lineTo(25.000,165.000);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 35.000);
+ctx.setFillStyle(BLRgba32(43,2,69,255));
+    ctx.fillPath(segment);
+} while(false);
+
+  do {
+BLPath segment;
+segment.moveTo(44.461, 168.398);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(46.000, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 160.602);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(48.719, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 159.086);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(41.758, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 160.602);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(44.461, vtxOut.y);
+segment.moveTo(49.695, 168.398);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(51.250, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 161.875);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(49.695, vtxOut.y);
+segment.moveTo(50.484, 160.672);
+segment.cubicTo(51.055,160.672,51.430,160.266,51.430,159.617);
+segment.cubicTo(51.430,158.977,51.055,158.563,50.484,158.563);
+segment.cubicTo(49.906,158.563,49.531,158.977,49.531,159.617);
+segment.cubicTo(49.531,160.266,49.906,160.672,50.484,160.672);
+segment.moveTo(56.891, 168.398);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(58.430, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 164.375);
+segment.cubicTo(58.430,162.766,57.602,161.766,56.281,161.766);
+segment.cubicTo(55.570,161.766,54.898,162.047,54.383,162.586);
+segment.lineTo(54.109,161.875);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(53.000, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 168.398);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(54.547, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 163.727);
+segment.cubicTo(54.898,163.422,55.305,163.258,55.750,163.258);
+segment.cubicTo(56.500,163.258,56.891,163.727,56.891,164.617);
+segment.moveTo(60.453, 171.313);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(62.133, vtxOut.y);
+segment.lineTo(63.070,168.398);
+segment.lineTo(65.328,161.875);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(63.789, vtxOut.y);
+segment.lineTo(62.320,166.820);
+segment.lineTo(60.938,161.875);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(59.227, vtxOut.y);
+segment.lineTo(61.523,168.398);
+segment.moveTo(70.984, 168.398);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(72.609, vtxOut.y);
+segment.lineTo(75.641,159.086);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(74.039, vtxOut.y);
+segment.lineTo(71.867,166.344);
+segment.lineTo(69.781,159.086);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(67.961, vtxOut.y);
+segment.moveTo(79.445, 168.539);
+  segment.ellipticArcTo(BLPoint(5.141, 5.141), 0.000, 0, 0, BLPoint(81.531,168.078));
+segment.lineTo(81.180,166.898);
+  segment.ellipticArcTo(BLPoint(3.664, 3.664), 0.000, 0, 1, BLPoint(79.688,167.234));
+segment.cubicTo(78.633,167.234,77.977,166.680,77.797,165.609);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(81.617, vtxOut.y);
+segment.cubicTo(81.656,165.344,81.688,164.938,81.688,164.641);
+segment.cubicTo(81.688,162.859,80.703,161.742,79.133,161.742);
+segment.cubicTo(77.375,161.742,76.195,163.125,76.195,165.148);
+segment.cubicTo(76.195,167.250,77.430,168.539,79.445,168.539);
+segment.moveTo(77.758, 164.563);
+segment.cubicTo(77.844,163.578,78.281,163.055,79.023,163.055);
+segment.cubicTo(79.781,163.055,80.234,163.609,80.234,164.563);
+segment.moveTo(85.664, 168.539);
+segment.cubicTo(86.383,168.539,87.047,168.359,87.609,168.023);
+segment.lineTo(87.266,166.844);
+  segment.ellipticArcTo(BLPoint(3.031, 3.031), 0.000, 0, 1, BLPoint(86.008,167.156));
+segment.cubicTo(84.914,167.156,84.281,166.398,84.281,165.102);
+segment.cubicTo(84.281,163.859,84.852,163.195,85.898,163.195);
+segment.cubicTo(86.336,163.195,86.828,163.297,87.258,163.484);
+segment.lineTo(87.586,162.133);
+  segment.ellipticArcTo(BLPoint(3.945, 3.945), 0.000, 0, 0, BLPoint(85.852,161.742));
+segment.cubicTo(83.945,161.742,82.711,163.141,82.711,165.289);
+segment.cubicTo(82.711,167.328,83.813,168.539,85.664,168.539);
+segment.moveTo(91.172, 168.492);
+segment.cubicTo(91.570,168.492,92.008,168.398,92.383,168.266);
+segment.lineTo(92.070,167.047);
+segment.cubicTo(91.898,167.125,91.695,167.164,91.516,167.164);
+segment.cubicTo(90.953,167.164,90.602,166.805,90.602,166.242);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 163.242);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(92.078, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 161.875);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(90.602, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 159.984);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(89.070, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 161.875);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(88.250, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 163.242);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(89.070, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 166.344);
+segment.cubicTo(89.070,167.664,89.859,168.492,91.172,168.492);
+segment.moveTo(96.047, 168.539);
+segment.cubicTo(97.906,168.539,99.148,167.125,99.148,165.031);
+segment.cubicTo(99.148,163.031,98.000,161.742,96.227,161.742);
+segment.cubicTo(94.359,161.742,93.109,163.141,93.109,165.250);
+segment.cubicTo(93.109,167.234,94.250,168.539,96.047,168.539);
+segment.moveTo(96.180, 167.086);
+segment.cubicTo(95.273,167.086,94.680,166.305,94.680,165.102);
+segment.cubicTo(94.680,163.914,95.219,163.195,96.086,163.195);
+segment.cubicTo(96.992,163.195,97.586,163.984,97.586,165.203);
+segment.cubicTo(97.586,166.359,97.039,167.086,96.180,167.086);
+segment.moveTo(100.531, 168.398);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(102.086, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 164.156);
+segment.cubicTo(102.438,163.688,102.938,163.422,103.484,163.422);
+segment.cubicTo(103.727,163.422,104.016,163.477,104.234,163.570);
+segment.lineTo(104.586,162.000);
+  segment.ellipticArcTo(BLPoint(2.016, 2.016), 0.000, 0, 0, BLPoint(103.711,161.813));
+segment.cubicTo(103.008,161.813,102.367,162.188,101.914,162.844);
+segment.lineTo(101.773,161.875);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(100.531, vtxOut.y);
+segment.moveTo(112.039, 168.539);
+segment.cubicTo(113.305,168.539,114.398,168.117,115.289,167.297);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 163.164);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(111.703, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 164.641);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(113.773, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 166.633);
+  segment.ellipticArcTo(BLPoint(3.078, 3.078), 0.000, 0, 1, BLPoint(112.250,167.023));
+segment.cubicTo(110.492,167.016,109.359,165.719,109.359,163.633);
+segment.cubicTo(109.359,161.617,110.414,160.477,112.281,160.477);
+segment.cubicTo(113.023,160.477,113.883,160.656,114.539,160.906);
+segment.lineTo(114.977,159.555);
+segment.cubicTo(114.250,159.164,113.328,158.953,112.383,158.953);
+segment.cubicTo(109.555,158.945,107.727,160.906,107.727,163.836);
+segment.cubicTo(107.727,166.656,109.445,168.539,112.039,168.539);
+segment.moveTo(116.820, 168.398);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(118.375, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 164.156);
+segment.cubicTo(118.727,163.688,119.219,163.422,119.766,163.422);
+segment.cubicTo(120.008,163.422,120.305,163.477,120.523,163.570);
+segment.lineTo(120.867,162.000);
+  segment.ellipticArcTo(BLPoint(2.016, 2.016), 0.000, 0, 0, BLPoint(120.000,161.813));
+segment.cubicTo(119.297,161.813,118.648,162.188,118.203,162.844);
+segment.lineTo(118.055,161.875);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(116.820, vtxOut.y);
+segment.moveTo(125.492, 168.398);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(126.609, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 164.477);
+segment.cubicTo(126.609,162.711,125.695,161.742,123.953,161.742);
+segment.cubicTo(123.117,161.742,122.203,161.969,121.516,162.375);
+segment.lineTo(121.875,163.570);
+segment.cubicTo(122.492,163.297,123.078,163.164,123.625,163.164);
+segment.cubicTo(124.570,163.164,125.078,163.570,125.078,164.344);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 164.523);
+segment.cubicTo(122.531,164.563,121.406,165.203,121.406,166.594);
+segment.cubicTo(121.406,167.773,122.195,168.539,123.438,168.539);
+segment.cubicTo(124.195,168.539,124.820,168.266,125.273,167.758);
+segment.moveTo(125.078, 166.727);
+segment.cubicTo(124.789,167.023,124.398,167.195,123.953,167.195);
+segment.cubicTo(123.359,167.195,122.953,166.859,122.953,166.359);
+segment.cubicTo(122.953,165.773,123.563,165.500,125.078,165.477);
+segment.moveTo(131.188, 168.539);
+segment.cubicTo(132.781,168.539,133.922,167.086,133.922,165.031);
+segment.cubicTo(133.922,163.086,132.867,161.742,131.352,161.742);
+  segment.ellipticArcTo(BLPoint(2.281, 2.281), 0.000, 0, 0, BLPoint(129.555,162.602));
+segment.lineTo(129.273,161.875);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(128.234, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 171.313);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(129.734, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 167.969);
+segment.cubicTo(130.109,168.336,130.617,168.539,131.188,168.539);
+segment.moveTo(129.734, 166.344);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 163.742);
+  segment.ellipticArcTo(BLPoint(1.539, 1.539), 0.000, 0, 1, BLPoint(130.914,163.195));
+segment.cubicTo(131.797,163.195,132.352,163.945,132.352,165.164);
+segment.cubicTo(132.352,166.344,131.844,167.086,130.984,167.086);
+segment.cubicTo(130.461,167.086,130.000,166.805,129.734,166.344);
+segment.moveTo(139.172, 168.398);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(140.719, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 164.305);
+segment.cubicTo(140.719,162.734,139.883,161.773,138.555,161.773);
+  segment.ellipticArcTo(BLPoint(2.438, 2.438), 0.000, 0, 0, BLPoint(136.828,162.469));
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 158.477);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(135.305, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 168.398);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(136.828, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 163.781);
+segment.cubicTo(137.172,163.422,137.578,163.258,138.016,163.258);
+segment.cubicTo(138.781,163.258,139.172,163.727,139.172,164.617);
+segment.moveTo(142.344, 168.398);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(143.898, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 161.875);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(142.344, vtxOut.y);
+segment.moveTo(143.133, 160.672);
+segment.cubicTo(143.703,160.672,144.078,160.266,144.078,159.617);
+segment.cubicTo(144.078,158.977,143.703,158.563,143.133,158.563);
+segment.cubicTo(142.555,158.563,142.180,158.977,142.180,159.617);
+segment.cubicTo(142.180,160.266,142.555,160.672,143.133,160.672);
+segment.moveTo(148.242, 168.539);
+segment.cubicTo(148.953,168.539,149.625,168.359,150.180,168.023);
+segment.lineTo(149.844,166.844);
+  segment.ellipticArcTo(BLPoint(3.031, 3.031), 0.000, 0, 1, BLPoint(148.578,167.156));
+segment.cubicTo(147.484,167.156,146.859,166.398,146.859,165.102);
+segment.cubicTo(146.859,163.859,147.430,163.195,148.469,163.195);
+segment.cubicTo(148.906,163.195,149.406,163.297,149.828,163.484);
+segment.lineTo(150.156,162.133);
+  segment.ellipticArcTo(BLPoint(3.945, 3.945), 0.000, 0, 0, BLPoint(148.422,161.742));
+segment.cubicTo(146.516,161.742,145.281,163.141,145.281,165.289);
+segment.cubicTo(145.281,167.328,146.383,168.539,148.242,168.539);
+segment.moveTo(153.344, 168.539);
+segment.cubicTo(154.961,168.539,155.914,167.742,155.914,166.438);
+segment.cubicTo(155.914,164.000,152.586,164.820,152.586,163.719);
+segment.cubicTo(152.578,163.328,153.008,163.086,153.719,163.086);
+segment.cubicTo(154.203,163.086,154.789,163.195,155.336,163.367);
+segment.lineTo(155.664,162.078);
+segment.cubicTo(155.117,161.859,154.422,161.742,153.758,161.742);
+segment.cubicTo(152.070,161.742,151.094,162.492,151.094,163.836);
+segment.cubicTo(151.094,166.266,154.375,165.344,154.375,166.523);
+segment.cubicTo(154.375,166.938,153.977,167.195,153.320,167.195);
+segment.cubicTo(152.750,167.195,151.961,167.023,151.344,166.750);
+segment.lineTo(151.008,168.023);
+segment.cubicTo(151.672,168.352,152.531,168.539,153.344,168.539);
+ctx.setFillStyle(BLRgba32(254,185,63,255));
+    ctx.fillPath(segment);
+} while(false);
+
+  do {
+BLPath segment;
+segment.moveTo(88.953, 54.680);
+segment.lineTo(89.047,75.414);
+segment.lineTo(75.016,62.148);
+segment.lineTo(86.203,113.352);
+segment.lineTo(99.289,128.453);
+segment.lineTo(66.797,144.992);
+segment.lineTo(101.414,147.664);
+segment.lineTo(106.078,153.320);
+segment.lineTo(109.766,142.555);
+segment.lineTo(127.281,130.797);
+segment.lineTo(124.945,109.477);
+segment.lineTo(133.203,109.531);
+segment.lineTo(121.234,101.133);
+segment.lineTo(111.047,108.039);
+segment.lineTo(104.773,90.313);
+segment.moveTo(77.773, 66.984);
+segment.lineTo(102.914,90.289);
+segment.lineTo(87.305,111.461);
+segment.moveTo(121.117, 103.164);
+segment.lineTo(128.734,108.094);
+segment.lineTo(113.492,108.219);
+segment.moveTo(112.258, 111.484);
+segment.lineTo(124.688,121.305);
+segment.lineTo(125.625,129.406);
+segment.lineTo(117.930,127.523);
+segment.moveTo(114.039, 129.117);
+segment.lineTo(85.383,144.734);
+segment.lineTo(73.000,143.805);
+segment.lineTo(100.805,129.375);
+ctx.setFillStyle(BLRgba32(254,185,63,255));
+    ctx.fillPath(segment);
+} while(false);
+
+  do {
+BLPath segment;
+segment.moveTo(55.023, 45.711);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(59.086, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 27.117);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(66.258, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 23.508);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(47.891, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 27.117);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(55.023, vtxOut.y);
+segment.moveTo(68.852, 45.711);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(72.945, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 30.156);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(68.852, vtxOut.y);
+segment.moveTo(70.930, 27.281);
+segment.cubicTo(72.430,27.281,73.422,26.320,73.422,24.781);
+segment.cubicTo(73.422,26.320,72.430,22.258,70.930,22.258);
+segment.cubicTo(69.391,22.258,68.398,23.250,68.398,24.781);
+segment.cubicTo(68.398,23.250,69.391,27.281,70.930,27.281);
+segment.moveTo(87.820, 45.711);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(91.891, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 36.109);
+segment.cubicTo(91.891,32.273,89.711,29.906,86.227,29.906);
+segment.cubicTo(84.336,29.906,82.578,30.578,81.203,31.859);
+segment.lineTo(80.492,30.156);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(77.555, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 45.711);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(81.648, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 34.578);
+segment.cubicTo(82.578,33.844,83.633,33.453,84.813,33.453);
+segment.cubicTo(86.797,33.453,87.820,34.578,87.820,36.688);
+segment.moveTo(97.234, 52.656);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(101.648, vtxOut.y);
+segment.lineTo(104.141,45.711);
+segment.lineTo(110.094,30.156);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(106.031, vtxOut.y);
+segment.lineTo(102.156,41.938);
+segment.lineTo(98.516,30.156);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(94.000, vtxOut.y);
+segment.lineTo(100.047,45.711);
+segment.moveTo(118.289, 45.711);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(122.578, vtxOut.y);
+segment.lineTo(130.578,23.508);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(126.352, vtxOut.y);
+segment.lineTo(120.625,40.813);
+segment.lineTo(115.117,23.508);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(110.320, vtxOut.y);
+segment.moveTo(143.539, 46.031);
+segment.cubicTo(146.867,46.031,149.742,45.039,152.109,43.086);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 33.234);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(142.641, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 36.750);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(148.109, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 41.484);
+segment.cubicTo(146.992,42.063,145.617,42.414,144.078,42.414);
+segment.cubicTo(139.438,42.414,136.461,39.313,136.461,34.352);
+segment.cubicTo(136.461,29.555,139.250,26.828,144.180,26.828);
+segment.cubicTo(146.125,26.828,148.398,27.250,150.125,27.859);
+segment.lineTo(151.281,24.625);
+segment.cubicTo(149.359,23.695,146.930,23.188,144.430,23.188);
+segment.cubicTo(136.977,23.188,132.141,27.859,132.141,34.828);
+segment.cubicTo(132.141,41.555,136.688,46.031,143.539,46.031);
+ctx.setFillStyle(BLRgba32(254,185,63,255));
+    ctx.fillPath(segment);
+} while(false);
+  return img;
+}

@@ -100,14 +100,14 @@ struct BinReader {
         return data[pos++];
     }
 
-    uint16_t readUint16() {
+    uint16_t readUInt16() {
         uint16_t value = 0;
         value |= readOctet();
         value |= readOctet() << 8;
         return value;
     }
 
-    uint32_t readUint32() {
+    uint32_t readUInt32() {
         uint32_t value = 0;
         value |= readOctet();
         value |= readOctet() << 8;
@@ -117,7 +117,7 @@ struct BinReader {
     }
 
     float readFloat() {
-        uint32_t value = readUint32();
+        uint32_t value = readUInt32();
         return *reinterpret_cast<float*>(&value);
     }
 };

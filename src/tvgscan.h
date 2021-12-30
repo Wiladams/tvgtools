@@ -257,7 +257,7 @@ namespace tvg
 		bool endOfDocument = false;
 
 
-		tvgscanner(BinStream& bs)
+		tvgscanner(BinReader& bs)
 			:bs(bs)
 		{
 			init();

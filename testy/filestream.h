@@ -12,29 +12,19 @@
 	support creating file in write mode as well.
 */
 
-#include "BinReader.h"
+#include "binreader.h"
 #include "mmap.h"
 
 
-class FileStream : public BinReader
+class FileStream : public tvg::BinReader
 {
 	std::string fFileName;
 	std::shared_ptr<mmap> fFileMap;
 
 public:
-	// BUGBUG
-	// should be able to specify read/write/create
-	// currently assume readonly
-	// default to little-endian 
-	// If the file can not be mapped, then the data pointer
-	// of the BinStream will not be set and isValid() will 
-	// be false.
-	FileStream(const std::string& s, bool littleendian = true)
-		:FileStream(s.c_str(), littleendian)
-	{
-	}
 
-	FileStream(const char* filename, bool littleendian = true)
+
+	FileStream(const char* filename)
 		: BinReader(nullptr, 0),
 		fFileName(filename)
 	{

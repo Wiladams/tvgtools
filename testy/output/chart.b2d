@@ -1,0 +1,1434 @@
+BLImage render(const BLContextCreateInfo & cci) {
+  BLImage img(600, 400, BL_FORMAT_PRGB32);
+  BLContext ctx(img, cci);
+  ctx.clearAll();
+  ctx.setFillStyle(BLRgba32(0xFFffffff));
+  ctx.fillAll();
+
+  BLPoint vtxOut;
+
+  do {
+BLPath segment;
+segment.moveTo(46.41, 0.00);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(553.59, vtxOut.y);
+segment.cubicTo(576.78,0.00,600.00,0.00,600.00,46.41);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 353.59);
+segment.cubicTo(600.00,400.00,553.59,400.00,553.59,400.00);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(46.41, vtxOut.y);
+segment.cubicTo(23.22,400.00,0.00,400.00,0.00,353.59);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 46.41);
+segment.cubicTo(0.00,0.00,23.22,0.00,46.41,0.00);
+ctx.setFillStyle(BLRgba32(255,255,255,255));
+    ctx.fillPath(segment);
+ctx.setFillStyle(BLRgba32(255,255,255,255));
+    ctx.fillPath(segment);
+  ctx.setStrokeWidth(0.00);
+ctx.setStrokeStyle(BLRgba32(0,0,0,0));
+  ctx.strokePath(segment);
+} while(false);
+
+  do {
+BLPath segment;
+segment.moveTo(131.16, 33.41);
+  segment.ellipticArcTo(BLPoint(105.84, 105.84), 0.00, 0, 1, BLPoint(228.34,97.34));
+segment.lineTo(189.47,114.09);
+  segment.ellipticArcTo(BLPoint(63.50, 63.50), 0.00, 0, 0, BLPoint(131.16,75.75));
+segment.close();
+ctx.setFillStyle(BLRgba32(222,1,48,255));
+    ctx.fillPath(segment);
+ctx.setFillStyle(BLRgba32(222,1,48,255));
+    ctx.fillPath(segment);
+  ctx.setStrokeWidth(0.00);
+ctx.setStrokeStyle(BLRgba32(0,0,0,0));
+  ctx.strokePath(segment);
+} while(false);
+
+  do {
+BLPath segment;
+segment.moveTo(228.34, 97.34);
+  segment.ellipticArcTo(BLPoint(105.84, 105.84), 0.00, 0, 1, BLPoint(228.34,181.16));
+segment.lineTo(189.47,164.41);
+  segment.ellipticArcTo(BLPoint(63.50, 63.50), 0.00, 0, 0, BLPoint(189.47,114.09));
+segment.close();
+ctx.setFillStyle(BLRgba32(16,200,0,255));
+    ctx.fillPath(segment);
+ctx.setFillStyle(BLRgba32(16,200,0,255));
+    ctx.fillPath(segment);
+  ctx.setStrokeWidth(0.00);
+ctx.setStrokeStyle(BLRgba32(0,0,0,0));
+  ctx.strokePath(segment);
+} while(false);
+
+  do {
+BLPath segment;
+segment.moveTo(228.34, 181.16);
+  segment.ellipticArcTo(BLPoint(105.84, 105.84), 0.00, 0, 1, BLPoint(73.00,227.69));
+segment.lineTo(96.28,192.31);
+  segment.ellipticArcTo(BLPoint(63.50, 63.50), 0.00, 0, 0, BLPoint(189.47,164.41));
+segment.close();
+ctx.setFillStyle(BLRgba32(32,48,192,255));
+    ctx.fillPath(segment);
+ctx.setFillStyle(BLRgba32(32,48,192,255));
+    ctx.fillPath(segment);
+  ctx.setStrokeWidth(0.00);
+ctx.setStrokeStyle(BLRgba32(0,0,0,0));
+  ctx.strokePath(segment);
+} while(false);
+
+  do {
+BLPath segment;
+segment.moveTo(73.00, 227.69);
+  segment.ellipticArcTo(BLPoint(105.84, 105.84), 0.00, 0, 1, BLPoint(26.94,120.91));
+segment.lineTo(68.63,128.25);
+  segment.ellipticArcTo(BLPoint(63.50, 63.50), 0.00, 0, 0, BLPoint(96.28,192.31));
+segment.close();
+ctx.setFillStyle(BLRgba32(238,170,0,255));
+    ctx.fillPath(segment);
+ctx.setFillStyle(BLRgba32(238,170,0,255));
+    ctx.fillPath(segment);
+  ctx.setStrokeWidth(0.00);
+ctx.setStrokeStyle(BLRgba32(0,0,0,0));
+  ctx.strokePath(segment);
+} while(false);
+
+  do {
+BLPath segment;
+segment.moveTo(26.94, 120.91);
+  segment.ellipticArcTo(BLPoint(105.84, 105.84), 0.00, 0, 1, BLPoint(131.13,33.41));
+segment.lineTo(131.16,75.75);
+  segment.ellipticArcTo(BLPoint(63.50, 63.50), 0.00, 0, 0, BLPoint(68.63,128.25));
+segment.close();
+ctx.setFillStyle(BLRgba32(148,20,207,255));
+    ctx.fillPath(segment);
+ctx.setFillStyle(BLRgba32(148,20,207,255));
+    ctx.fillPath(segment);
+  ctx.setStrokeWidth(0.00);
+ctx.setStrokeStyle(BLRgba32(0,0,0,0));
+  ctx.strokePath(segment);
+} while(false);
+
+  do {
+BLPath segment;
+segment.moveTo(52.28, 372.63);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(80.41, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 372.41);
+  segment.quadTo(80.41,368.78,76.72,368.78);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(55.97, vtxOut.y);
+  segment.quadTo(52.28,368.78,52.28,372.41);
+segment.close();
+segment.moveTo(87.44, 372.63);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(115.56, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 366.13);
+  segment.quadTo(115.56,362.50,111.88,362.50);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(91.13, vtxOut.y);
+  segment.quadTo(87.44,362.50,87.44,366.13);
+segment.close();
+segment.moveTo(122.59, 372.63);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(150.75, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 349.03);
+  segment.quadTo(150.75,345.41,147.03,345.41);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(126.31, vtxOut.y);
+  segment.quadTo(122.59,345.41,122.59,349.03);
+segment.close();
+segment.moveTo(157.78, 372.63);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(185.91, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 328.41);
+  segment.quadTo(185.91,324.78,182.22,324.78);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(161.47, vtxOut.y);
+  segment.quadTo(157.78,324.78,157.78,328.41);
+segment.close();
+segment.moveTo(192.94, 372.63);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(221.06, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 330.72);
+  segment.quadTo(221.06,327.09,217.38,327.09);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(196.63, vtxOut.y);
+  segment.quadTo(192.94,327.09,192.94,330.72);
+segment.close();
+segment.moveTo(228.09, 372.63);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(256.22, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 296.38);
+  segment.quadTo(256.22,292.75,252.53,292.75);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(231.78, vtxOut.y);
+  segment.quadTo(228.09,292.75,228.09,296.38);
+segment.close();
+segment.moveTo(263.25, 372.63);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(291.41, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 293.16);
+  segment.quadTo(291.41,289.53,287.69,289.53);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(266.97, vtxOut.y);
+  segment.quadTo(263.25,289.53,263.25,293.16);
+segment.close();
+segment.moveTo(298.44, 372.63);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(326.56, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 286.13);
+  segment.quadTo(326.56,282.50,322.88,282.50);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(302.13, vtxOut.y);
+  segment.quadTo(298.44,282.50,298.44,286.13);
+segment.close();
+segment.moveTo(333.59, 372.63);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(361.72, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 286.44);
+  segment.quadTo(361.72,282.81,358.03,282.81);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(337.28, vtxOut.y);
+  segment.quadTo(333.59,282.81,333.59,286.44);
+segment.close();
+segment.moveTo(368.75, 372.63);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(396.88, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 255.63);
+  segment.quadTo(396.88,252.00,393.19,252.00);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(372.44, vtxOut.y);
+  segment.quadTo(368.75,252.00,368.75,255.63);
+segment.close();
+segment.moveTo(403.91, 372.63);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(432.06, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 264.81);
+  segment.quadTo(432.06,261.16,428.38,261.16);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(407.63, vtxOut.y);
+  segment.quadTo(403.91,261.16,403.91,264.81);
+segment.close();
+segment.moveTo(439.09, 372.63);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(467.22, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 255.84);
+  segment.quadTo(467.22,252.22,463.53,252.22);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(442.78, vtxOut.y);
+  segment.quadTo(439.09,252.22,439.09,255.84);
+segment.close();
+segment.moveTo(474.25, 372.63);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(502.38, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 232.94);
+  segment.quadTo(502.38,229.31,498.69,229.31);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(477.94, vtxOut.y);
+  segment.quadTo(474.25,229.31,474.25,232.94);
+segment.close();
+segment.moveTo(509.41, 372.63);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(537.53, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 164.66);
+  segment.quadTo(537.53,161.03,533.84,161.03);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(513.09, vtxOut.y);
+  segment.quadTo(509.41,161.03,509.41,164.66);
+segment.close();
+segment.moveTo(544.56, 372.63);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(572.72, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 186.03);
+  segment.quadTo(572.72,182.41,569.00,182.41);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(548.28, vtxOut.y);
+  segment.quadTo(544.56,182.41,544.56,186.03);
+segment.close();
+ctx.setFillStyle(BLRgba32(32,48,192,255));
+    ctx.fillPath(segment);
+ctx.setFillStyle(BLRgba32(32,48,192,255));
+    ctx.fillPath(segment);
+  ctx.setStrokeWidth(0.00);
+ctx.setStrokeStyle(BLRgba32(0,0,0,0));
+  ctx.strokePath(segment);
+} while(false);
+
+  do {
+BLPath segment;
+segment.moveTo(313.41, 45.91);
+  segment.quadTo(313.41,44.97,313.44,44.09);
+  segment.quadTo(313.50,43.22,313.78,42.31);
+  segment.quadTo(314.31,40.47,315.44,38.81);
+  segment.quadTo(316.59,37.09,317.88,35.59);
+  segment.quadTo(318.47,34.91,319.06,34.47);
+  segment.quadTo(319.69,34.00,320.53,33.47);
+  segment.quadTo(322.31,32.28,324.31,31.50);
+  segment.quadTo(326.41,30.66,328.63,30.66);
+  segment.quadTo(330.94,30.66,333.09,31.03);
+  segment.quadTo(335.25,31.41,337.31,32.59);
+  segment.quadTo(337.38,32.66,337.72,32.94);
+  segment.quadTo(338.09,33.22,338.19,33.31);
+  segment.quadTo(339.50,34.25,340.78,35.13);
+  segment.quadTo(342.09,36.00,343.19,37.19);
+  segment.quadTo(343.19,37.22,343.34,37.44);
+  segment.quadTo(343.50,37.59,343.69,37.84);
+  segment.quadTo(343.88,38.09,344.09,38.38);
+  segment.quadTo(344.28,38.63,344.38,38.75);
+  segment.quadTo(344.41,38.84,344.53,39.06);
+  segment.quadTo(344.72,39.25,344.75,39.31);
+  segment.quadTo(344.78,39.34,345.00,39.59);
+  segment.quadTo(345.25,39.78,345.28,39.88);
+  segment.quadTo(345.31,39.91,345.28,40.25);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 40.59);
+  segment.quadTo(345.28,40.66,345.44,41.13);
+  segment.quadTo(345.63,41.53,345.66,41.63);
+  segment.quadTo(345.66,41.66,345.69,41.88);
+  segment.quadTo(345.75,42.03,345.78,42.25);
+  segment.quadTo(345.88,42.44,345.91,42.66);
+  segment.quadTo(346.00,42.81,346.00,42.84);
+  segment.quadTo(346.03,42.94,346.16,43.22);
+  segment.quadTo(346.31,43.53,346.31,43.59);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 44.72);
+  segment.quadTo(346.38,44.88,346.41,45.09);
+  segment.quadTo(346.44,45.28,346.44,45.50);
+  segment.quadTo(346.50,45.66,346.50,45.72);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 46.09);
+  segment.quadTo(346.53,46.38,346.53,46.78);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 47.56);
+  segment.quadTo(346.56,47.94,346.56,48.19);
+  segment.quadTo(346.56,49.84,346.44,51.78);
+  segment.quadTo(346.31,53.72,345.66,55.22);
+  segment.quadTo(345.56,55.34,345.44,55.59);
+  segment.quadTo(345.31,55.84,345.19,56.13);
+  segment.quadTo(345.09,56.41,344.91,56.66);
+  segment.quadTo(344.78,56.91,344.75,57.03);
+  segment.quadTo(344.72,57.13,344.53,57.31);
+  segment.quadTo(344.41,57.50,344.38,57.56);
+  segment.quadTo(343.44,58.72,342.31,59.84);
+  segment.quadTo(341.22,60.97,340.16,62.00);
+  segment.quadTo(339.47,62.66,338.50,63.16);
+  segment.quadTo(337.56,63.66,336.78,64.09);
+  segment.quadTo(335.50,64.81,333.75,65.00);
+  segment.quadTo(332.06,65.19,330.69,65.19);
+  segment.quadTo(328.06,65.19,325.66,64.56);
+  segment.quadTo(323.25,63.94,321.06,62.53);
+  segment.quadTo(320.91,62.44,320.59,62.28);
+segment.lineTo(320.09,61.97);
+  segment.quadTo(319.88,61.75,319.66,61.63);
+  segment.quadTo(319.50,61.50,319.44,61.47);
+  segment.quadTo(319.41,61.47,319.00,61.13);
+  segment.quadTo(318.63,60.75,318.09,60.25);
+  segment.quadTo(317.53,59.75,316.97,59.28);
+  segment.quadTo(316.44,58.78,316.06,58.44);
+  segment.quadTo(316.09,58.44,315.97,58.31);
+segment.lineTo(315.91,58.22);
+  segment.quadTo(315.84,58.16,315.72,57.75);
+  segment.quadTo(315.59,57.28,315.56,57.19);
+  segment.quadTo(315.06,56.00,314.56,54.94);
+  segment.quadTo(314.06,53.84,313.78,52.56);
+  segment.quadTo(313.75,52.53,313.75,52.25);
+  segment.quadTo(313.78,51.94,313.78,51.91);
+  segment.quadTo(313.63,50.38,313.50,48.94);
+  segment.quadTo(313.41,47.44,313.41,45.91);
+segment.close();
+segment.moveTo(321.06, 50.66);
+  segment.quadTo(321.09,50.75,321.22,50.97);
+  segment.quadTo(321.34,51.13,321.34,51.22);
+  segment.quadTo(321.44,51.25,321.47,51.50);
+  segment.quadTo(321.50,51.69,321.56,51.75);
+  segment.quadTo(321.59,51.81,321.72,52.16);
+  segment.quadTo(321.88,52.50,322.06,52.91);
+segment.lineTo(322.38,53.66);
+  segment.quadTo(322.56,54.03,322.63,54.19);
+  segment.quadTo(323.22,55.56,323.94,56.34);
+  segment.quadTo(324.69,57.13,325.59,57.50);
+  segment.quadTo(326.56,57.88,327.69,58.00);
+  segment.quadTo(328.84,58.06,330.19,58.06);
+  segment.quadTo(332.59,58.06,334.53,57.31);
+  segment.quadTo(336.53,56.53,338.06,54.56);
+  segment.quadTo(338.09,54.47,338.22,54.25);
+  segment.quadTo(338.34,54.06,338.34,54.03);
+  segment.quadTo(338.84,52.75,338.88,51.47);
+  segment.quadTo(338.91,50.13,338.91,48.78);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 48.31);
+  segment.quadTo(338.91,47.97,338.88,47.59);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 46.41);
+  segment.quadTo(338.78,45.91,338.59,45.00);
+  segment.quadTo(338.38,44.09,338.06,43.16);
+  segment.quadTo(337.72,42.16,337.31,41.31);
+  segment.quadTo(336.91,40.50,336.44,40.22);
+  segment.quadTo(336.41,40.22,336.16,40.16);
+  segment.quadTo(335.91,40.09,335.91,40.03);
+  segment.quadTo(335.88,40.00,335.75,39.78);
+  segment.quadTo(335.63,39.56,335.53,39.50);
+  segment.quadTo(335.50,39.44,335.38,39.31);
+  segment.quadTo(335.25,39.13,335.16,39.13);
+  segment.quadTo(334.00,38.44,332.59,38.09);
+  segment.quadTo(331.22,37.72,329.88,37.72);
+  segment.quadTo(328.00,37.72,326.34,38.28);
+  segment.quadTo(324.69,38.81,323.41,39.88);
+  segment.quadTo(322.19,40.91,321.44,42.44);
+  segment.quadTo(320.69,43.97,320.69,45.97);
+  segment.quadTo(320.69,47.13,320.81,48.31);
+  segment.quadTo(320.94,49.47,321.06,50.66);
+segment.close();
+segment.moveTo(353.22, 39.88);
+  segment.quadTo(353.22,38.75,353.75,38.59);
+  segment.quadTo(354.31,38.38,355.22,38.38);
+  segment.quadTo(355.38,38.38,355.66,38.44);
+  segment.quadTo(356.00,38.47,356.03,38.47);
+  segment.quadTo(356.53,38.50,357.31,38.59);
+  segment.quadTo(358.16,38.63,358.94,38.72);
+  segment.quadTo(359.72,38.81,360.25,38.88);
+segment.lineTo(360.84,38.97);
+segment.lineTo(361.00,39.13);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 46.31);
+  segment.quadTo(361.03,47.13,361.06,47.97);
+  segment.quadTo(361.13,48.81,361.13,49.56);
+  segment.quadTo(361.16,50.25,361.16,50.47);
+  segment.quadTo(361.16,50.59,361.19,50.97);
+  segment.quadTo(361.28,51.34,361.31,51.81);
+  segment.quadTo(361.41,52.28,361.44,52.78);
+  segment.quadTo(361.50,53.22,361.53,53.47);
+  segment.quadTo(361.75,54.88,362.28,55.88);
+  segment.quadTo(362.84,56.81,364.19,57.41);
+  segment.quadTo(364.31,57.44,364.72,57.56);
+  segment.quadTo(365.13,57.66,365.25,57.75);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(365.34, vtxOut.y);
+  segment.quadTo(367.31,57.75,368.28,56.53);
+  segment.quadTo(369.22,55.34,369.50,53.47);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 50.06);
+  segment.quadTo(369.50,48.09,369.47,46.56);
+  segment.quadTo(369.47,45.00,369.31,43.06);
+  segment.quadTo(369.31,42.94,369.25,42.53);
+  segment.quadTo(369.22,42.13,369.13,41.66);
+  segment.quadTo(369.09,41.16,369.06,40.75);
+  segment.quadTo(369.03,40.34,369.03,40.22);
+  segment.quadTo(369.00,40.09,369.06,39.47);
+  segment.quadTo(369.09,38.84,369.13,38.59);
+  segment.quadTo(369.13,38.56,369.22,38.44);
+  segment.quadTo(369.31,38.31,369.31,38.22);
+  segment.quadTo(370.00,38.06,370.47,38.09);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(372.88, vtxOut.y);
+  segment.quadTo(373.16,38.09,373.81,38.16);
+  segment.quadTo(374.50,38.16,375.25,38.19);
+  segment.quadTo(376.03,38.19,376.72,38.22);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(377.63, vtxOut.y);
+  segment.quadTo(377.88,38.38,378.00,38.72);
+  segment.quadTo(378.13,39.00,378.13,39.38);
+  segment.quadTo(378.16,39.72,378.16,40.09);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 40.66);
+  segment.quadTo(378.16,43.88,377.88,47.00);
+  segment.quadTo(377.63,50.09,377.06,53.31);
+  segment.quadTo(377.06,53.41,376.94,53.94);
+  segment.quadTo(376.88,54.44,376.75,55.13);
+  segment.quadTo(376.63,55.78,376.47,56.50);
+  segment.quadTo(376.34,57.16,376.25,57.56);
+  segment.quadTo(375.88,59.06,375.22,60.31);
+  segment.quadTo(374.59,61.50,373.59,62.69);
+  segment.quadTo(372.63,63.81,371.47,64.28);
+  segment.quadTo(370.34,64.72,369.00,65.19);
+  segment.quadTo(368.81,65.22,368.56,65.25);
+  segment.quadTo(368.31,65.34,368.28,65.34);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(363.16, vtxOut.y);
+  segment.quadTo(362.94,65.34,362.44,65.22);
+  segment.quadTo(361.94,65.09,361.69,64.97);
+  segment.quadTo(359.97,64.16,358.47,63.13);
+  segment.quadTo(357.00,62.03,355.69,60.59);
+  segment.quadTo(355.38,60.19,355.13,59.56);
+  segment.quadTo(354.91,58.94,354.84,58.44);
+segment.lineTo(354.50,57.13);
+  segment.quadTo(354.31,56.25,354.09,55.44);
+  segment.quadTo(353.94,54.56,353.75,53.91);
+  segment.quadTo(353.59,53.22,353.59,53.09);
+  segment.quadTo(353.59,53.03,353.56,52.75);
+segment.lineTo(353.47,52.06);
+  segment.quadTo(353.47,51.69,353.44,51.41);
+  segment.quadTo(353.38,51.09,353.38,51.00);
+  segment.quadTo(353.38,50.84,353.31,50.28);
+  segment.quadTo(353.25,49.75,353.22,49.56);
+segment.close();
+segment.moveTo(388.97, 64.97);
+  segment.quadTo(389.06,60.38,388.97,55.78);
+  segment.quadTo(388.94,51.22,388.63,46.63);
+  segment.quadTo(388.50,46.56,388.13,46.56);
+  segment.quadTo(387.75,46.53,387.28,46.50);
+  segment.quadTo(386.88,46.44,386.50,46.44);
+  segment.quadTo(386.13,46.41,385.97,46.41);
+  segment.quadTo(385.88,46.41,385.50,46.38);
+  segment.quadTo(385.19,46.28,385.09,46.09);
+  segment.quadTo(384.84,44.75,384.78,43.44);
+  segment.quadTo(384.72,42.13,384.72,40.78);
+  segment.quadTo(384.72,40.34,384.81,40.09);
+  segment.quadTo(384.88,39.78,385.25,39.50);
+  segment.quadTo(386.13,39.44,387.09,39.34);
+  segment.quadTo(388.06,39.25,388.97,39.13);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 38.22);
+  segment.quadTo(388.97,37.00,388.88,35.72);
+  segment.quadTo(388.75,34.38,388.75,33.06);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 32.03);
+  segment.quadTo(388.78,31.44,388.97,31.00);
+  segment.quadTo(390.25,30.81,391.38,30.81);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(395.50, vtxOut.y);
+segment.lineTo(395.88,31.00);
+  segment.quadTo(395.88,31.03,395.97,31.56);
+  segment.quadTo(396.06,32.09,396.06,32.44);
+  segment.quadTo(396.06,32.81,396.09,33.81);
+  segment.quadTo(396.19,34.75,396.22,35.88);
+  segment.quadTo(396.31,37.00,396.34,37.97);
+  segment.quadTo(396.44,38.94,396.44,39.31);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(400.53, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 46.09);
+segment.lineTo(400.44,46.16);
+  segment.quadTo(400.41,46.22,400.34,46.22);
+  segment.quadTo(400.31,46.22,400.31,46.25);
+  segment.quadTo(399.56,46.56,398.63,46.66);
+  segment.quadTo(397.66,46.69,396.97,46.78);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 61.63);
+  segment.quadTo(396.97,62.03,396.91,62.66);
+  segment.quadTo(396.88,63.25,396.84,63.81);
+  segment.quadTo(396.84,64.34,396.78,64.75);
+segment.lineTo(396.75,65.19);
+segment.lineTo(396.44,65.34);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(390.22, vtxOut.y);
+  segment.quadTo(390.09,65.34,389.69,65.25);
+  segment.quadTo(389.31,65.22,389.19,65.19);
+  segment.quadTo(388.97,65.09,388.97,64.97);
+segment.close();
+segment.moveTo(407.53, 62.88);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 61.34);
+  segment.quadTo(407.59,60.25,407.59,58.97);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 53.47);
+  segment.quadTo(407.59,52.16,407.53,51.13);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 49.56);
+  segment.quadTo(407.53,49.13,407.50,47.78);
+  segment.quadTo(407.47,46.41,407.38,44.59);
+  segment.quadTo(407.31,42.78,407.22,40.75);
+  segment.quadTo(407.13,38.69,407.06,36.88);
+  segment.quadTo(406.97,35.03,406.88,33.72);
+  segment.quadTo(406.84,32.34,406.84,31.91);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 31.00);
+  segment.quadTo(406.84,30.91,406.94,30.66);
+  segment.quadTo(406.97,30.53,407.00,30.44);
+segment.lineTo(408.09,30.28);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(413.75, vtxOut.y);
+  segment.quadTo(413.91,30.28,414.06,30.63);
+  segment.quadTo(414.25,30.91,414.25,31.00);
+  segment.quadTo(414.28,31.16,414.28,31.56);
+  segment.quadTo(414.31,31.94,414.38,32.44);
+  segment.quadTo(414.41,32.91,414.41,33.31);
+  segment.quadTo(414.44,33.69,414.44,33.84);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 36.66);
+  segment.quadTo(414.44,37.09,414.50,38.22);
+segment.lineTo(414.56,40.53);
+  segment.quadTo(414.66,41.75,414.69,42.81);
+  segment.quadTo(414.78,43.84,414.78,44.25);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 44.50);
+  segment.quadTo(414.81,44.69,414.88,44.88);
+segment.lineTo(414.94,45.28);
+  segment.quadTo(415.00,45.50,415.00,45.53);
+  segment.quadTo(415.19,47.53,415.25,49.59);
+  segment.quadTo(415.31,51.63,415.31,53.66);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 54.03);
+  segment.quadTo(415.31,54.59,415.28,56.03);
+  segment.quadTo(415.28,57.44,415.25,59.06);
+  segment.quadTo(415.25,60.69,415.19,62.13);
+  segment.quadTo(415.16,63.53,415.16,64.09);
+  segment.quadTo(415.06,64.47,414.88,64.66);
+  segment.quadTo(414.66,64.81,414.38,64.88);
+  segment.quadTo(414.13,64.94,413.78,64.97);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(413.22, vtxOut.y);
+  segment.quadTo(413.13,64.97,412.81,65.00);
+  segment.quadTo(412.50,65.06,412.13,65.09);
+segment.lineTo(411.47,65.19);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(408.09, vtxOut.y);
+segment.lineTo(407.75,64.81);
+segment.close();
+segment.moveTo(421.94, 48.72);
+  segment.quadTo(422.56,45.84,423.91,43.75);
+  segment.quadTo(425.31,41.66,427.31,40.34);
+  segment.quadTo(429.28,39.00,431.72,38.38);
+  segment.quadTo(434.22,37.72,437.03,37.72);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(438.25, vtxOut.y);
+  segment.quadTo(440.91,38.03,442.84,39.31);
+  segment.quadTo(444.78,40.53,446.06,42.44);
+  segment.quadTo(447.41,44.34,448.03,46.69);
+  segment.quadTo(448.69,49.06,448.69,51.53);
+  segment.quadTo(448.69,52.81,448.59,54.09);
+  segment.quadTo(448.50,55.38,448.31,56.66);
+  segment.quadTo(447.97,58.41,447.19,59.69);
+  segment.quadTo(446.41,60.97,445.28,62.31);
+  segment.quadTo(444.84,62.88,444.09,63.41);
+  segment.quadTo(443.34,63.91,442.44,64.34);
+  segment.quadTo(441.56,64.78,440.66,65.06);
+  segment.quadTo(439.78,65.34,439.09,65.34);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(437.19, vtxOut.y);
+  segment.quadTo(435.50,65.34,434.03,65.19);
+  segment.quadTo(432.63,64.97,430.94,64.66);
+  segment.quadTo(430.91,64.59,430.69,64.56);
+  segment.quadTo(430.50,64.47,430.41,64.44);
+  segment.quadTo(430.28,64.41,430.00,64.28);
+  segment.quadTo(429.69,64.16,429.34,63.97);
+  segment.quadTo(429.00,63.78,428.72,63.59);
+  segment.quadTo(428.41,63.44,428.31,63.38);
+  segment.quadTo(428.22,63.31,428.00,63.25);
+  segment.quadTo(427.81,63.13,427.75,63.06);
+  segment.quadTo(427.59,62.91,427.19,62.53);
+  segment.quadTo(426.81,62.13,426.34,61.66);
+  segment.quadTo(425.94,61.16,425.53,60.81);
+segment.lineTo(424.94,60.22);
+  segment.quadTo(424.09,59.31,423.47,58.19);
+  segment.quadTo(422.88,57.03,422.56,55.84);
+  segment.quadTo(422.22,54.59,422.06,53.34);
+  segment.quadTo(421.94,52.06,421.94,50.84);
+segment.close();
+segment.moveTo(429.88, 50.38);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 51.47);
+  segment.quadTo(429.88,51.81,430.06,52.44);
+  segment.quadTo(430.13,52.56,430.19,52.94);
+  segment.quadTo(430.31,53.28,430.44,53.69);
+  segment.quadTo(430.63,54.09,430.75,54.50);
+  segment.quadTo(430.88,54.94,430.94,55.09);
+  segment.quadTo(431.00,55.13,431.03,55.25);
+  segment.quadTo(431.13,55.38,431.16,55.44);
+  segment.quadTo(431.22,55.56,431.44,55.78);
+segment.lineTo(431.94,56.28);
+  segment.quadTo(432.19,56.53,432.38,56.78);
+  segment.quadTo(432.63,57.00,432.72,57.03);
+  segment.quadTo(432.81,57.03,433.09,57.25);
+  segment.quadTo(433.44,57.44,433.63,57.56);
+  segment.quadTo(434.13,57.88,434.59,58.00);
+  segment.quadTo(435.03,58.06,435.63,58.06);
+  segment.quadTo(437.81,58.06,439.16,57.16);
+  segment.quadTo(440.56,56.22,441.41,54.19);
+  segment.quadTo(441.72,53.34,441.72,52.41);
+  segment.quadTo(441.78,51.47,441.78,50.59);
+  segment.quadTo(441.78,50.50,441.75,50.34);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 50.09);
+  segment.quadTo(441.41,48.22,440.25,47.06);
+  segment.quadTo(439.09,45.88,437.34,45.16);
+  segment.quadTo(436.91,44.97,436.41,44.97);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(435.50, vtxOut.y);
+  segment.quadTo(432.88,44.97,431.34,46.38);
+  segment.quadTo(429.88,47.72,429.88,50.38);
+segment.close();
+segment.moveTo(455.22, 48.72);
+  segment.quadTo(455.84,45.84,457.19,43.75);
+  segment.quadTo(458.59,41.66,460.59,40.34);
+  segment.quadTo(462.56,39.00,465.00,38.38);
+  segment.quadTo(467.50,37.72,470.31,37.72);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(471.53, vtxOut.y);
+  segment.quadTo(474.19,38.03,476.13,39.31);
+  segment.quadTo(478.06,40.53,479.34,42.44);
+  segment.quadTo(480.69,44.34,481.31,46.69);
+  segment.quadTo(481.97,49.06,481.97,51.53);
+  segment.quadTo(481.97,52.81,481.88,54.09);
+  segment.quadTo(481.78,55.38,481.59,56.66);
+  segment.quadTo(481.25,58.41,480.47,59.69);
+  segment.quadTo(479.69,60.97,478.56,62.31);
+  segment.quadTo(478.13,62.88,477.38,63.41);
+  segment.quadTo(476.63,63.91,475.72,64.34);
+  segment.quadTo(474.84,64.78,473.94,65.06);
+  segment.quadTo(473.06,65.34,472.38,65.34);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(470.47, vtxOut.y);
+  segment.quadTo(468.78,65.34,467.31,65.19);
+  segment.quadTo(465.91,64.97,464.22,64.66);
+  segment.quadTo(464.19,64.59,463.97,64.56);
+  segment.quadTo(463.78,64.47,463.69,64.44);
+  segment.quadTo(463.56,64.41,463.28,64.28);
+  segment.quadTo(462.97,64.16,462.63,63.97);
+  segment.quadTo(462.28,63.78,462.00,63.59);
+  segment.quadTo(461.69,63.44,461.56,63.38);
+  segment.quadTo(461.50,63.31,461.28,63.25);
+  segment.quadTo(461.09,63.13,461.03,63.06);
+  segment.quadTo(460.88,62.91,460.47,62.53);
+  segment.quadTo(460.09,62.13,459.63,61.66);
+  segment.quadTo(459.22,61.16,458.81,60.81);
+segment.lineTo(458.22,60.22);
+  segment.quadTo(457.38,59.31,456.75,58.19);
+  segment.quadTo(456.16,57.03,455.84,55.84);
+  segment.quadTo(455.50,54.59,455.34,53.34);
+  segment.quadTo(455.22,52.06,455.22,50.84);
+segment.close();
+segment.moveTo(463.16, 50.38);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 51.47);
+  segment.quadTo(463.16,51.81,463.34,52.44);
+  segment.quadTo(463.41,52.56,463.47,52.94);
+  segment.quadTo(463.59,53.28,463.72,53.69);
+  segment.quadTo(463.91,54.09,464.03,54.50);
+  segment.quadTo(464.16,54.94,464.22,55.09);
+  segment.quadTo(464.25,55.13,464.31,55.25);
+  segment.quadTo(464.38,55.38,464.44,55.44);
+  segment.quadTo(464.50,55.56,464.72,55.78);
+segment.lineTo(465.22,56.28);
+  segment.quadTo(465.47,56.53,465.66,56.78);
+  segment.quadTo(465.91,57.00,466.00,57.03);
+  segment.quadTo(466.09,57.03,466.38,57.25);
+  segment.quadTo(466.72,57.44,466.91,57.56);
+  segment.quadTo(467.41,57.88,467.88,58.00);
+  segment.quadTo(468.31,58.06,468.91,58.06);
+  segment.quadTo(471.09,58.06,472.44,57.16);
+  segment.quadTo(473.84,56.22,474.69,54.19);
+  segment.quadTo(475.00,53.34,475.00,52.41);
+  segment.quadTo(475.06,51.47,475.06,50.59);
+  segment.quadTo(475.06,50.50,475.00,50.34);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 50.09);
+  segment.quadTo(474.69,48.22,473.53,47.06);
+  segment.quadTo(472.38,45.88,470.63,45.16);
+  segment.quadTo(470.19,44.97,469.69,44.97);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(468.78, vtxOut.y);
+  segment.quadTo(466.16,44.97,464.63,46.38);
+  segment.quadTo(463.16,47.72,463.16,50.38);
+segment.close();
+segment.moveTo(497.28, 54.84);
+  segment.quadTo(497.28,57.31,497.59,59.75);
+  segment.quadTo(497.88,62.16,497.88,64.66);
+  segment.quadTo(497.88,64.88,497.84,65.09);
+  segment.quadTo(497.84,65.25,497.50,65.38);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(496.44, vtxOut.y);
+  segment.quadTo(495.69,65.44,494.81,65.47);
+  segment.quadTo(494.00,65.50,493.22,65.50);
+  segment.quadTo(492.47,65.56,492.16,65.56);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(491.22, vtxOut.y);
+  segment.quadTo(490.69,65.56,490.31,65.50);
+  segment.quadTo(489.97,65.50,489.78,65.38);
+  segment.quadTo(489.56,65.25,489.44,64.97);
+  segment.quadTo(489.34,64.69,489.34,64.09);
+  segment.quadTo(489.34,63.56,489.31,62.16);
+  segment.quadTo(489.31,60.72,489.28,58.72);
+  segment.quadTo(489.22,56.75,489.19,54.38);
+  segment.quadTo(489.16,52.00,489.06,49.56);
+  segment.quadTo(489.03,47.06,489.00,44.72);
+  segment.quadTo(488.94,42.31,488.91,40.34);
+  segment.quadTo(488.88,38.34,488.81,36.94);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 31.03);
+  segment.quadTo(488.91,30.66,489.19,30.53);
+  segment.quadTo(489.47,30.50,490.28,30.50);
+  segment.quadTo(491.06,30.44,491.94,30.44);
+  segment.quadTo(492.78,30.41,493.56,30.41);
+  segment.quadTo(494.38,30.38,494.66,30.38);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(495.28, vtxOut.y);
+  segment.quadTo(495.81,30.38,496.31,30.41);
+  segment.quadTo(496.84,30.44,497.13,31.03);
+  segment.quadTo(497.09,33.25,497.16,35.47);
+  segment.quadTo(497.31,37.59,497.31,39.84);
+  segment.quadTo(497.28,40.47,497.22,41.06);
+  segment.quadTo(497.13,41.69,497.13,42.31);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 44.59);
+  segment.quadTo(497.16,45.75,497.50,46.81);
+segment.lineTo(506.34,37.44);
+segment.lineTo(513.97,39.22);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 39.44);
+  segment.quadTo(513.97,39.88,513.63,40.38);
+  segment.quadTo(513.28,40.88,513.03,41.16);
+segment.lineTo(503.50,50.66);
+  segment.quadTo(503.47,50.72,503.63,50.97);
+  segment.quadTo(503.81,51.22,504.06,51.53);
+  segment.quadTo(504.31,51.88,504.63,52.25);
+  segment.quadTo(504.91,52.56,505.09,52.78);
+  segment.quadTo(505.22,52.91,505.69,53.41);
+  segment.quadTo(506.16,53.84,506.69,54.44);
+  segment.quadTo(507.22,54.97,507.69,55.47);
+  segment.quadTo(508.16,55.91,508.28,56.03);
+  segment.quadTo(508.41,56.16,508.91,56.78);
+  segment.quadTo(509.41,57.38,509.94,58.06);
+  segment.quadTo(510.53,58.72,511.03,59.34);
+  segment.quadTo(511.53,59.94,511.63,60.06);
+  segment.quadTo(511.81,60.22,512.19,60.69);
+  segment.quadTo(512.59,61.09,513.03,61.59);
+  segment.quadTo(513.50,62.06,513.88,62.50);
+  segment.quadTo(514.28,62.91,514.50,63.06);
+  segment.quadTo(514.66,63.38,514.75,63.56);
+  segment.quadTo(514.88,63.72,514.88,63.97);
+  segment.quadTo(514.88,64.19,514.66,64.31);
+  segment.quadTo(514.50,64.44,514.28,64.47);
+  segment.quadTo(513.13,64.78,511.88,64.84);
+  segment.quadTo(510.69,64.94,509.50,65.19);
+  segment.quadTo(509.41,65.19,509.06,65.25);
+  segment.quadTo(508.78,65.34,508.41,65.44);
+  segment.quadTo(508.09,65.56,507.75,65.63);
+  segment.quadTo(507.47,65.72,507.38,65.72);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(507.31, vtxOut.y);
+  segment.quadTo(506.97,65.72,506.72,65.38);
+  segment.quadTo(506.38,65.00,505.84,64.44);
+  segment.quadTo(505.31,63.81,504.78,63.25);
+  segment.quadTo(504.28,62.63,503.91,62.19);
+  segment.quadTo(503.53,61.75,503.50,61.72);
+  segment.quadTo(503.38,61.59,503.00,61.09);
+  segment.quadTo(502.66,60.59,502.25,60.00);
+  segment.quadTo(501.84,59.44,501.47,58.94);
+segment.lineTo(501.06,58.31);
+  segment.quadTo(500.94,58.13,500.53,57.66);
+  segment.quadTo(500.09,57.19,499.97,57.06);
+segment.lineTo(497.28,54.38);
+segment.close();
+segment.moveTo(520.69, 51.88);
+  segment.quadTo(520.69,51.50,521.03,51.03);
+  segment.quadTo(521.41,50.59,521.84,50.19);
+  segment.quadTo(522.34,49.72,522.84,49.44);
+  segment.quadTo(523.38,49.09,523.72,49.06);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(524.78, vtxOut.y);
+  segment.quadTo(526.06,49.06,527.16,49.50);
+  segment.quadTo(528.25,49.94,528.84,51.22);
+  segment.quadTo(528.94,51.28,528.97,51.50);
+  segment.quadTo(529.00,51.66,529.00,51.69);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 54.34);
+  segment.quadTo(529.00,54.44,528.81,54.84);
+  segment.quadTo(528.59,55.22,528.47,55.44);
+  segment.quadTo(527.88,56.53,526.91,56.94);
+  segment.quadTo(525.94,57.38,524.72,57.38);
+  segment.quadTo(524.22,57.38,523.50,57.13);
+  segment.quadTo(522.84,56.81,522.22,56.41);
+  segment.quadTo(521.59,55.97,521.16,55.38);
+  segment.quadTo(520.75,54.81,520.69,54.22);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 53.03);
+segment.close();
+segment.moveTo(520.88, 42.44);
+  segment.quadTo(520.88,40.72,521.97,39.59);
+  segment.quadTo(523.09,38.44,524.84,38.44);
+  segment.quadTo(527.16,38.44,528.25,39.44);
+  segment.quadTo(529.38,40.41,529.38,42.72);
+  segment.quadTo(529.38,43.94,528.69,44.88);
+  segment.quadTo(528.00,45.78,527.06,46.41);
+  segment.quadTo(526.66,46.69,526.13,46.75);
+  segment.quadTo(525.56,46.78,525.06,46.78);
+  segment.quadTo(523.91,46.78,523.00,46.16);
+  segment.quadTo(522.09,45.50,521.41,44.63);
+  segment.quadTo(520.97,44.19,520.91,43.59);
+  segment.quadTo(520.88,43.03,520.88,42.44);
+segment.close();
+ctx.setFillStyle(BLRgba32(0,0,0,255));
+    ctx.fillPath(segment);
+ctx.setFillStyle(BLRgba32(0,0,0,255));
+    ctx.fillPath(segment);
+  ctx.setStrokeWidth(0.00);
+ctx.setStrokeStyle(BLRgba32(0,0,0,0));
+  ctx.strokePath(segment);
+} while(false);
+
+  do {
+BLPath segment;
+segment.moveTo(287.53, 99.88);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 111.19);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(294.22, vtxOut.y);
+  segment.quadTo(297.59,111.19,299.22,109.78);
+  segment.quadTo(300.84,108.38,300.84,105.50);
+  segment.quadTo(300.84,102.63,299.22,101.25);
+  segment.quadTo(297.59,99.88,294.22,99.88);
+segment.close();
+segment.moveTo(287.53, 87.19);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 96.47);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(293.72, vtxOut.y);
+  segment.quadTo(296.78,96.47,298.25,95.34);
+  segment.quadTo(299.78,94.19,299.78,91.81);
+  segment.quadTo(299.78,89.50,298.25,88.34);
+  segment.quadTo(296.78,87.19,293.72,87.19);
+segment.close();
+segment.moveTo(283.34, 83.75);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(294.03, vtxOut.y);
+  segment.quadTo(298.81,83.75,301.38,85.72);
+  segment.quadTo(303.97,87.72,303.97,91.38);
+  segment.quadTo(303.97,94.22,302.66,95.88);
+  segment.quadTo(301.31,97.56,298.75,97.97);
+  segment.quadTo(301.84,98.63,303.53,100.75);
+  segment.quadTo(305.25,102.81,305.25,105.97);
+  segment.quadTo(305.25,110.09,302.44,112.34);
+  segment.quadTo(299.63,114.59,294.44,114.59);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(283.34, vtxOut.y);
+segment.close();
+segment.moveTo(325.66, 95.00);
+  segment.quadTo(325.00,94.63,324.25,94.47);
+  segment.quadTo(323.50,94.28,322.59,94.28);
+  segment.quadTo(319.38,94.28,317.63,96.41);
+  segment.quadTo(315.91,98.47,315.91,102.41);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 114.59);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(312.09, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 91.47);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(315.91, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 95.06);
+  segment.quadTo(317.13,92.94,319.03,91.94);
+  segment.quadTo(320.97,90.91,323.72,90.91);
+  segment.quadTo(324.09,90.91,324.56,90.97);
+  segment.quadTo(325.06,91.00,325.63,91.09);
+segment.close();
+segment.moveTo(329.63, 91.47);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(333.44, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 114.59);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(329.63, vtxOut.y);
+segment.close();
+segment.moveTo(329.63, 82.44);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(333.44, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 87.25);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(329.63, vtxOut.y);
+segment.close();
+segment.moveTo(356.63, 102.75);
+  segment.quadTo(356.63,98.63,354.91,96.34);
+  segment.quadTo(353.22,94.09,350.16,94.09);
+  segment.quadTo(347.09,94.09,345.38,96.34);
+  segment.quadTo(343.69,98.63,343.69,102.75);
+  segment.quadTo(343.69,106.88,345.38,109.16);
+  segment.quadTo(347.09,111.44,350.16,111.44);
+  segment.quadTo(353.22,111.44,354.91,109.16);
+  segment.quadTo(356.63,106.88,356.63,102.75);
+segment.close();
+segment.moveTo(360.44, 111.72);
+  segment.quadTo(360.44,117.66,357.81,120.53);
+  segment.quadTo(355.19,123.41,349.78,123.41);
+  segment.quadTo(347.78,123.41,346.00,123.09);
+  segment.quadTo(344.22,122.81,342.53,122.19);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 118.50);
+  segment.quadTo(344.22,119.41,345.84,119.84);
+  segment.quadTo(347.47,120.28,349.16,120.28);
+  segment.quadTo(352.91,120.28,354.78,118.31);
+  segment.quadTo(356.63,116.38,356.63,112.41);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 110.53);
+  segment.quadTo(355.47,112.59,353.63,113.59);
+  segment.quadTo(351.78,114.59,349.22,114.59);
+  segment.quadTo(344.97,114.59,342.34,111.38);
+  segment.quadTo(339.75,108.13,339.75,102.75);
+  segment.quadTo(339.75,97.38,342.34,94.16);
+  segment.quadTo(344.97,90.91,349.22,90.91);
+  segment.quadTo(351.78,90.91,353.63,91.91);
+  segment.quadTo(355.47,92.94,356.63,94.97);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 91.47);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(360.44, vtxOut.y);
+segment.close();
+segment.moveTo(387.50, 100.63);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 114.59);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(383.72, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 100.75);
+  segment.quadTo(383.72,97.47,382.44,95.84);
+  segment.quadTo(381.16,94.22,378.59,94.22);
+  segment.quadTo(375.50,94.22,373.72,96.16);
+  segment.quadTo(371.94,98.13,371.94,101.53);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 114.59);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(368.13, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 82.44);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(371.94, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 95.06);
+  segment.quadTo(373.31,92.97,375.16,91.94);
+  segment.quadTo(377.00,90.91,379.44,90.91);
+  segment.quadTo(383.44,90.91,385.47,93.38);
+  segment.quadTo(387.50,95.84,387.50,100.63);
+segment.close();
+segment.moveTo(398.88, 84.88);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 91.47);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(406.69, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 94.41);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(398.88, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 106.97);
+  segment.quadTo(398.88,109.81,399.63,110.63);
+  segment.quadTo(400.41,111.44,402.78,111.44);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(406.69, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 114.59);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(402.78, vtxOut.y);
+  segment.quadTo(398.38,114.59,396.72,112.97);
+  segment.quadTo(395.03,111.31,395.03,106.97);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 94.41);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(392.25, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 91.47);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(395.03, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 84.88);
+segment.close();
+segment.moveTo(436.88, 82.44);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 85.59);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(433.25, vtxOut.y);
+  segment.quadTo(431.19,85.59,430.38,86.44);
+  segment.quadTo(429.59,87.25,429.59,89.41);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 91.47);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(435.88, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 94.41);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(429.59, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 114.59);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(425.78, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 94.41);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(422.13, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 91.47);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(425.78, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 89.84);
+  segment.quadTo(425.78,85.97,427.56,84.22);
+  segment.quadTo(429.38,82.44,433.28,82.44);
+segment.close();
+segment.moveTo(439.66, 105.47);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 91.47);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(443.47, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 105.31);
+  segment.quadTo(443.47,108.63,444.75,110.28);
+  segment.quadTo(446.03,111.91,448.59,111.91);
+  segment.quadTo(451.69,111.91,453.47,109.94);
+  segment.quadTo(455.25,107.97,455.25,104.59);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 91.47);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(459.06, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 114.59);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(455.25, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 111.06);
+  segment.quadTo(453.88,113.16,452.03,114.19);
+  segment.quadTo(450.22,115.22,447.78,115.22);
+  segment.quadTo(443.81,115.22,441.72,112.72);
+  segment.quadTo(439.66,110.25,439.66,105.47);
+segment.close();
+segment.moveTo(449.25, 90.91);
+segment.close();
+segment.moveTo(470.66, 84.88);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 91.47);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(478.50, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 94.41);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(470.66, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 106.97);
+  segment.quadTo(470.66,109.81,471.41,110.63);
+  segment.quadTo(472.19,111.44,474.59,111.44);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(478.50, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 114.59);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(474.59, vtxOut.y);
+  segment.quadTo(470.19,114.59,468.50,112.97);
+  segment.quadTo(466.81,111.31,466.81,106.97);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 94.41);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(464.03, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 91.47);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(466.81, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 84.88);
+segment.close();
+segment.moveTo(483.09, 105.47);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 91.47);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(486.91, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 105.31);
+  segment.quadTo(486.91,108.63,488.19,110.28);
+  segment.quadTo(489.47,111.91,492.03,111.91);
+  segment.quadTo(495.09,111.91,496.88,109.94);
+  segment.quadTo(498.69,107.97,498.69,104.59);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 91.47);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(502.50, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 114.59);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(498.69, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 111.06);
+  segment.quadTo(497.28,113.16,495.47,114.19);
+  segment.quadTo(493.63,115.22,491.22,115.22);
+  segment.quadTo(487.22,115.22,485.16,112.72);
+  segment.quadTo(483.09,110.25,483.09,105.47);
+segment.close();
+segment.moveTo(492.66, 90.91);
+segment.close();
+segment.moveTo(523.72, 95.00);
+  segment.quadTo(523.09,94.63,522.31,94.47);
+  segment.quadTo(521.59,94.28,520.69,94.28);
+  segment.quadTo(517.44,94.28,515.72,96.41);
+  segment.quadTo(514.00,98.47,514.00,102.41);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 114.59);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(510.19, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 91.47);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(514.00, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 95.06);
+  segment.quadTo(515.19,92.94,517.13,91.94);
+  segment.quadTo(519.03,90.91,521.78,90.91);
+  segment.quadTo(522.19,90.91,522.66,90.97);
+  segment.quadTo(523.13,91.00,523.72,91.09);
+segment.close();
+segment.moveTo(546.59, 102.09);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 103.94);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(529.09, vtxOut.y);
+  segment.quadTo(529.34,107.88,531.47,109.94);
+  segment.quadTo(533.59,111.97,537.38,111.97);
+  segment.quadTo(539.56,111.97,541.63,111.44);
+  segment.quadTo(543.69,110.91,545.72,109.84);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 113.44);
+  segment.quadTo(543.66,114.31,541.50,114.75);
+  segment.quadTo(539.38,115.22,537.16,115.22);
+  segment.quadTo(531.59,115.22,528.38,111.97);
+  segment.quadTo(525.13,108.75,525.13,103.25);
+  segment.quadTo(525.13,97.56,528.19,94.25);
+  segment.quadTo(531.28,90.91,536.50,90.91);
+  segment.quadTo(541.16,90.91,543.88,93.91);
+  segment.quadTo(546.59,96.91,546.59,102.09);
+segment.close();
+segment.moveTo(542.78, 100.97);
+  segment.quadTo(542.75,97.84,541.03,95.97);
+  segment.quadTo(539.34,94.13,536.53,94.13);
+  segment.quadTo(533.34,94.13,531.44,95.91);
+  segment.quadTo(529.53,97.72,529.22,101.00);
+segment.close();
+segment.moveTo(555.25, 109.34);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(559.44, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 114.59);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(555.25, vtxOut.y);
+segment.close();
+segment.moveTo(555.25, 83.75);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(559.44, vtxOut.y);
+// vlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 97.28);
+segment.lineTo(559.03,104.66);
+// hlineto
+segment.getLastVertex(&vtxOut);
+segment.lineTo(555.66, vtxOut.y);
+segment.lineTo(555.25,97.28);
+segment.close();
+ctx.setFillStyle(BLRgba32(0,0,0,255));
+    ctx.fillPath(segment);
+ctx.setFillStyle(BLRgba32(0,0,0,255));
+    ctx.fillPath(segment);
+  ctx.setStrokeWidth(0.00);
+ctx.setStrokeStyle(BLRgba32(0,0,0,0));
+  ctx.strokePath(segment);
+} while(false);
+  return img;
+}
