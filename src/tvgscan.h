@@ -29,15 +29,14 @@
 
 #include "binreader.h"
 
-
 namespace tvg
 {
-
 
 	// This enumeration corresponds to the top level
 	// commands from the tinyvg specification
 	// do NOT change them unless that spec changes
 	enum Commands {
+		TVG_ERROR = -1,
 		EndOfDocument = 0,		// end of the file
 		FillPolygon = 1,		// fills an N-gon
 		FillRectangles = 2,		// fills a set of rectangles
@@ -49,6 +48,16 @@ namespace tvg
 		OutlineFillPolygon = 8,		// combine fill and draw polygon
 		OutlineFillRectangles = 9,	// combine fill and draw rectangles
 		OutlineFillPath = 10,	// Combine fill and draw path
+	};
+
+	// These are geometry commands.  Mostly things are paths 
+	// and contours, but lines and rects are also part of the spec
+	// adding new geometry commands would go in here.
+	enum GeoCommands
+	{
+		line = 257,
+		rect = 258,
+		path = 259,
 	};
 
 	// path contour building commands
@@ -70,9 +79,9 @@ namespace tvg
 		// Extensions, these are NOT part of the spec, but useful
 		// for capturing contour commands in general
 		moveTo=256,
-		line = 257,
-		rectangle = 258,
+
 	};
+
 
 	// These match the TinyVG spec
 	// DONT change them
@@ -142,9 +151,12 @@ namespace tvg
 	struct tvg_style_t
 	{
 		int kind;	// flat, linear, radial
-
+		int id;		// and id that can be used on linear, or radial
 		tvg_point point_0;
 		tvg_point point_1;
+
+		int color_index_0;
+		int color_index_1;
 
 		tinyvg_rgba8888_t color_0;
 		tinyvg_rgba8888_t color_1;
@@ -255,7 +267,7 @@ namespace tvg
 		BinReader& bs;
 		bool isValid=false;
 		bool endOfDocument = false;
-
+		int gradientCount = 0;
 
 		tvgscanner(BinReader& bs)
 			:bs(bs)
@@ -362,6 +374,7 @@ namespace tvg
 			return true;
 		}
 
+
 		// next()
 		// The meat and potatoes of the parser.  This will return the 
 		// recognized item in the file stream, whether beginning
@@ -387,42 +400,18 @@ namespace tvg
 
 			case Commands::DrawLineLoop:
 			{
-				//printf("DrawLineLoop\n");
 				readLineHeader(cmd, primary_style_kind);
 
-				auto pt1 = readPoint();
-				//cmd.segment.moveTo(pt1);
+				cmd.contours.push_back(tvg_contour_command_t(GeoCommands::path));
 
-				tvg_contour_command_t figcmd(ContourCommands::moveTo);
-				figcmd.moveTo.point_0 = pt1;
-				cmd.contours.push_back(figcmd);
+				readLineStrip(cmd);
 
-				for (int i = 1; i < cmd.segment_count; i++)
-				{
-					auto pt = readPoint();
-					//cmd.segment.lineTo(pt);
-
-					tvg_contour_command_t linecmd(ContourCommands::lineTo);
-					//memset(&linecmd, 0, sizeof(tvg_contour_command_t));
-					//linecmd.kind = ContourCommands::lineTo;
-					linecmd.lineTo.point_1 = pt;
-					cmd.contours.push_back(linecmd);
-
-				}
-				
-				//cmd.segment.close();
-
-				tvg_contour_command_t closecmd(ContourCommands::closePath);
-				//memset(&closecmd, 0, sizeof(tvg_contour_command_t));
-				//closecmd.kind = ContourCommands::closePath;
-				cmd.contours.push_back(closecmd);
-
+				cmd.contours.push_back(tvg_contour_command_t(ContourCommands::closePath));
 			}
 			break;
 
 			case Commands::DrawLinePath:
 			{
-				//printf("DrawLinePath\n");
 				readLineHeader(cmd, primary_style_kind);
 				readPath(cmd);
 			}
@@ -430,20 +419,13 @@ namespace tvg
 
 			case Commands::DrawLines:
 			{
-				//printf("DrawLines\n");
 				readLineHeader(cmd, primary_style_kind);
 
 				// read sets of lines
 				for (int i = 0; i < cmd.segment_count; i++) {
-					auto p1 = readPoint();
-					auto p2 = readPoint();
-					//cmd.segment.addLine(BLLine(p1.x, p1.y, p2.x, p2.y));
-
-					tvg_contour_command_t linecmd(ContourCommands::line);
-					//memset(&linecmd, 0, sizeof(linecmd));
-					//linecmd.kind = ContourCommands::line;
-					linecmd.line.point_0 = p1;
-					linecmd.line.point_1 = p2;
+					tvg_contour_command_t linecmd(GeoCommands::line);
+					linecmd.line.point_0 = readPoint();
+					linecmd.line.point_1 = readPoint();
 					cmd.contours.push_back(linecmd);
 				}
 			}
@@ -451,28 +433,13 @@ namespace tvg
 
 			case Commands::DrawLineStrip:
 			{
-				//printf("DrawLineStrip\n");
 				readLineHeader(cmd, primary_style_kind);
-				auto pt1 = readPoint();
-				
-				tvg_contour_command_t figcmd(ContourCommands::moveTo);
-				figcmd.moveTo.point_0 = pt1;
-				cmd.contours.push_back(figcmd);
-
-				for (int i = 1; i < cmd.segment_count; i++)
-				{
-					auto pt = readPoint();
-				
-					tvg_contour_command_t geocmd(ContourCommands::lineTo);
-					geocmd.lineTo.point_1 = pt;
-					cmd.contours.push_back(geocmd);
-				}
+				readLineStrip(cmd);
 			}
 			break;
 
 			case Commands::FillPath:
 			{
-				//printf("FillPath\n");
 				readFillHeader(cmd, primary_style_kind);
 				readPath(cmd);
 			}
@@ -482,46 +449,25 @@ namespace tvg
 			{
 				readFillHeader(cmd, primary_style_kind);
 
-				auto pt1 = readPoint();
+				cmd.contours.push_back(tvg_contour_command_t(GeoCommands::path));
 
-				tvg_contour_command_t movcmd(ContourCommands::moveTo);
-				movcmd.moveTo.point_0 = pt1;
-				cmd.contours.push_back(movcmd);
-
-				for (int i = 1; i < cmd.segment_count; i++)
-				{
-					auto pt = readPoint();
-
-					tvg_contour_command_t geocmd(ContourCommands::lineTo);
-					geocmd.lineTo.point_1 = pt;
-					cmd.contours.push_back(geocmd);
-				}
-
-				tvg_contour_command_t closecmd(ContourCommands::closePath);
-				cmd.contours.push_back(closecmd);
+				readLineStrip(cmd);
+				cmd.contours.push_back(tvg_contour_command_t(ContourCommands::closePath));
 			}
 			break;
 
 			case Commands::FillRectangles:
 			{
-				//printf("FillRectangles\n");
 				readFillHeader(cmd, primary_style_kind);
 
 				// read rectangles
 				for (int i = 0; i < cmd.segment_count; i++)
 				{
-					auto x = readUnit();
-					auto y = readUnit();
-					auto w = readUnit();
-					auto h = readUnit();
-
-					tvg_contour_command_t geocmd(ContourCommands::rectangle);
-					memset(&geocmd, 0, sizeof(tvg_contour_command_t));
-					geocmd.kind = ContourCommands::rectangle;
-					geocmd.rect.x = x;
-					geocmd.rect.y = y;
-					geocmd.rect.width = w;
-					geocmd.rect.height = h;
+					tvg_contour_command_t geocmd(GeoCommands::rect);
+					geocmd.rect.x = readUnit();
+					geocmd.rect.y = readUnit();
+					geocmd.rect.width = readUnit();
+					geocmd.rect.height = readUnit();
 
 					cmd.contours.push_back(geocmd);
 				}
@@ -530,7 +476,6 @@ namespace tvg
 
 			case Commands::OutlineFillPath:
 			{
-				//printf("OutlineFillPath\n");
 				readOutlineFillHeader(cmd, primary_style_kind);
 				readPath(cmd);
 			}
@@ -538,71 +483,35 @@ namespace tvg
 
 			case Commands::OutlineFillPolygon:
 			{
-				//printf("OutlineFillPolygon\n");
 				readOutlineFillHeader(cmd, primary_style_kind);
-
-				auto pt1 = readPoint();
-
-				tvg_contour_command_t movcmd(ContourCommands::moveTo);
-				movcmd.moveTo.point_0 = pt1;
-				cmd.contours.push_back(movcmd);
-
-
-				for (int i = 1; i < cmd.segment_count; i++)
-				{
-					auto pt = readPoint();
-					tvg_contour_command_t geocmd(ContourCommands::lineTo);
-					geocmd.lineTo.point_1 = pt;
-					cmd.contours.push_back(geocmd);
-				}
-
-				tvg_contour_command_t closecmd(ContourCommands::closePath);
-				cmd.contours.push_back(closecmd);
-
-
-				/*
-				BLPoint* points = new BLPoint[cmd.segment_count];
-
-				// read polygon points
-				for (int i = 1; i <= cmd.segment_count; i++)
-				{
-					points[i - 1] = readPoint();
-				}
-				cmd.segment.addPolygon(points, cmd.segment_count);
-
-				delete[] points;
-				*/
+				cmd.contours.push_back(tvg_contour_command_t(GeoCommands::path));
+				readLineStrip(cmd);
+				cmd.contours.push_back(tvg_contour_command_t(ContourCommands::closePath));
 			}
 			break;
 
 			case Commands::OutlineFillRectangles:
 			{
-				//printf("OutlineFillRectangles\n");
 				readOutlineFillHeader(cmd, primary_style_kind);
 
 				// read rectangles
 				for (int i = 0; i < cmd.segment_count; i++)
 				{
-					auto x = readUnit();
-					auto y = readUnit();
-					auto w = readUnit();
-					auto h = readUnit();
-
-					tvg_contour_command_t geocmd(ContourCommands::rectangle);
-					geocmd.rect.x = x;
-					geocmd.rect.y = y;
-					geocmd.rect.width = w;
-					geocmd.rect.height = h;
+					tvg_contour_command_t geocmd(GeoCommands::rect);
+					geocmd.rect.x = readUnit();
+					geocmd.rect.y = readUnit();
+					geocmd.rect.width = readUnit();
+					geocmd.rect.height = readUnit();
 
 					cmd.contours.push_back(geocmd);
-					//rects[i] = BLRect(x, y, w, h);
 				}
 			}
 			break;
 
 			default: {
-				printf("Unknown Command: %d\n", cmd.command);
 				// Unknown command, simply return false
+				printf("Unknown Command: %d\n", cmd.command);
+
 				return false;
 			}
 				   break;
@@ -686,21 +595,23 @@ namespace tvg
 			switch (s.kind) {
 			case DrawingStyle::FlatColored:
 			{
-				int color_index_0 = readUInt();
-				s.color_0 = colorTable[color_index_0];
+				s.color_index_0 = readUInt();
+				s.color_0 = colorTable[s.color_index_0];
 			}
 				break;
 
 			case DrawingStyle::LinearGradient: 
 			case DrawingStyle::RadialGradient: 
 			{
+				gradientCount++;
+				s.id = gradientCount;
 				s.point_0 = readPoint();
 				s.point_1 = readPoint();
-				auto color_index_0 = readUInt();
-				auto color_index_1 = readUInt();
+				s.color_index_0 = readUInt();
+				s.color_index_1 = readUInt();
 
-				s.color_0 = colorTable[color_index_0];
-				s.color_1 = colorTable[color_index_1];
+				s.color_0 = colorTable[s.color_index_0];
+				s.color_1 = colorTable[s.color_index_1];
 			}
 			break;
 
@@ -758,6 +669,21 @@ namespace tvg
 			return true;
 		}
 
+		bool readLineStrip(tvg_command_t &cmd)
+		{
+			tvg_contour_command_t movcmd(ContourCommands::moveTo);
+			movcmd.moveTo.point_0 = readPoint();
+			cmd.contours.push_back(movcmd);
+
+			for (int i = 1; i < cmd.segment_count; i++)
+			{
+				tvg_contour_command_t linecmd(ContourCommands::lineTo);
+				linecmd.lineTo.point_1 = readPoint();
+				cmd.contours.push_back(linecmd);
+			}
+			return true;
+		}
+
 		// Read the components of a path used by
 		//   DrawLinePath
 		//   FillPath
@@ -782,6 +708,9 @@ namespace tvg
 				i += 1;
 			}
 
+			// Stick a path geometry symbol at the beginning
+			// of the contours collection
+			cmd.contours.push_back(tvg_contour_command_t(GeoCommands::path));
 
 			// tvg_contour_command_t
 			// Each segment is comprised of a number of contours

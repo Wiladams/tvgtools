@@ -1,10 +1,5 @@
-// 
-// generate fiddle output for tiny vector graphic
-// specify file name on the command line
-//
-
 #include "filestream.h"
-#include "blend2dfiddlerencoder.h"
+#include "tvgscan.h"
 
 using namespace tvg;
 
@@ -24,8 +19,7 @@ int main(int argc, char **argv)
 		return 1;
 	}
 
-	Blend2dFiddlerEncoder encoder;
-	encoder.writeDocument(scanner);
+
 	
 	return 0;
 }

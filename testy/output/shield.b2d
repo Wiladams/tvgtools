@@ -1,0 +1,36 @@
+BLImage render(const BLContextCreateInfo & cci) {
+  BLImage img(24, 24, BL_FORMAT_PRGB32);
+  BLContext ctx(img, cci);
+  ctx.clearAll();
+  ctx.setFillStyle(BLRgba32(0xFFffffff));
+  ctx.fillAll();
+
+  BLPoint vtxOut;
+
+  do {
+BLPath segment;
+segment.moveTo(12.000, 1.000);
+segment.lineTo(3.000,5.000);
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 11.000);
+segment.cubicTo(3.000,16.500,6.750,21.750,12.000,23.000);
+segment.cubicTo(17.250,21.750,21.000,16.500,21.000,11.000);
+segment.getLastVertex(&vtxOut);
+segment.lineTo(vtxOut.x, 5.000);
+segment.moveTo(17.250, 17.000);
+segment.cubicTo(16.000,18.750,14.000,20.250,12.000,21.000);
+segment.cubicTo(10.000,20.250,8.000,18.750,6.750,17.000);
+segment.cubicTo(6.500,16.500,6.250,16.000,6.000,15.500);
+segment.cubicTo(6.000,13.750,8.750,12.500,12.000,12.500);
+segment.cubicTo(15.250,12.500,18.000,13.750,18.000,15.500);
+segment.cubicTo(17.750,16.000,17.500,16.500,17.250,17.000);
+segment.moveTo(12.000, 5.000);
+segment.cubicTo(13.500,5.000,15.000,6.250,15.000,8.000);
+segment.cubicTo(15.000,9.500,13.750,11.000,12.000,11.000);
+segment.cubicTo(10.500,11.000,9.000,9.750,9.000,8.000);
+segment.cubicTo(9.000,6.500,10.250,5.000,12.000,5.000);
+ctx.setFillStyle(BLRgba32(41,173,255,255));
+    ctx.fillPath(segment);
+} while(false);
+  return img;
+}

@@ -1,11 +1,40 @@
 #pragma once
 
+#include <functional>
 #include "tvgscan.h"
 
 using namespace tvg;
 
-void writeStyle(const char *name, tvg_style_t& tvgs)
+
+
+class TVGScanEncoder
 {
+public:
+	TVGScanEncoder(void){}
+	virtual ~TVGScanEncoder(void){}
+
+	// Draw the entire thing in one shot
+	virtual void writeDocument(tvgscanner& p)	
+	{
+		writeDocumentHeader(p.header);
+		writeTokens(p);
+		writeDocumentFooter();
+	}
+
+	virtual void writeDocumentHeader(tvg_header_t &header)
+	{
+		printf("DOCUMENT FOOTER\n");
+	}
+
+	virtual void writeDocumentFooter()
+	{
+		printf("DOCUMENT FOOTER\n");
+	}
+
+
+
+    virtual void writeStyle(const char *name, tvg_style_t& tvgs)
+	{
 	switch (tvgs.kind)
 	{
 	case DrawingStyle::FlatColored:
@@ -42,32 +71,21 @@ void writeStyle(const char *name, tvg_style_t& tvgs)
 
 }
 
+
+
+	virtual void writePathEnd()
+	{
+		printf("\nPATH END\n");
+	}
+
 // Construct a path from contour commands
-void writeContour(tvg_contour_command_t& cmd)
+virtual void writeContour(tvg_command_t geo, tvg_contour_command_t& cmd )
 {
 	switch (cmd.kind)
 	{
 	case ContourCommands::moveTo:
 		printf("segment.moveTo(%3.3f, %3.3f);\n", cmd.moveTo.point_0.x, cmd.moveTo.point_0.y);
-		break;
-
-	case ContourCommands::line:
-	{
-		printf("segment.addLine(BLLine(%3.3f,%3.3f,%3.3f,%3.3f));\n",
-			cmd.line.point_0.x,
-			cmd.line.point_0.y,
-			cmd.line.point_1.x,
-			cmd.line.point_1.y);
-	}
 	break;
-	
-	case ContourCommands::rectangle:
-	{
-		printf("segment.addRect(BLRect(%3.3f,%3.3f,%3.3f,%3.3f));\n", 
-			cmd.rect.x, cmd.rect.y, cmd.rect.width, cmd.rect.height);
-	}
-	break;
-	
 
 	case ContourCommands::lineTo:
 	{
@@ -77,15 +95,12 @@ void writeContour(tvg_contour_command_t& cmd)
 	
 	case ContourCommands::hlineTo:
 	{
-		printf("// hlineto\n");
-		//printf("BLPoint vtxOut;\n");
 		printf("segment.getLastVertex(&vtxOut);\n");
 		printf("segment.lineTo(%3.3f, vtxOut.y);\n", cmd.hlineTo.x);
 	}
 	break;
 	case ContourCommands::vlineTo:
 	{
-		printf("// vlineto\n");
 		printf("segment.getLastVertex(&vtxOut);\n");
 		printf("segment.lineTo(vtxOut.x, %3.3f);\n", cmd.vlineTo.y);
 	}
@@ -124,7 +139,6 @@ void writeContour(tvg_contour_command_t& cmd)
 			cmd.arcEllipseTo.rotation,
 			cmd.arcEllipseTo.largeArc, cmd.arcEllipseTo.sweep,
 			cmd.arcEllipseTo.target.x, cmd.arcEllipseTo.target.y);
-
 	}
 	break;
 
@@ -135,42 +149,65 @@ void writeContour(tvg_contour_command_t& cmd)
 	}
 }
 
-void writeSegmentBegin()
+virtual void writeGeoLine(tvg_command_t &geo, tvg_contour_command_t & cmd)
 {
-	printf("\n  do {\n");
-	printf("BLPath segment;\n");
+	printf("GEO LINE\n");
 }
 
-void writeSegmentEnd()
+virtual void writeGeoPath(tvg_command_t &geo, tvg_contour_command_t & cmd)
 {
-	printf("} while(false);\n");
+	printf("GEO PATH\n");
 }
 
-void writeContours(std::vector<tvg_contour_command_t>& contours)
+virtual void writeGeoRect(tvg_command_t &geo, tvg_contour_command_t & cmd)
 {
-	for (auto& cmd : contours)
+	printf("GEO RECT\n");
+}
+
+
+void writeContours(tvg_command_t &geo)
+{
+	for (auto& cmd : geo.contours)
 	{
-		writeContour(cmd);
+		switch(cmd.kind)
+		{
+			case GeoCommands::rect:
+				writeGeoRect(geo, cmd);
+			break;
+
+			case GeoCommands::line:
+				writeGeoLine(geo, cmd);
+			break;
+
+			case GeoCommands::path:
+				writeGeoPath(geo, cmd);
+			break;
+
+
+			// assume it's the contours of a path
+			default:
+				writeContour(geo, cmd);
+			break;
+		}
 	}
 }
 
-void writeFillPath(tvg_style_t& s)
+virtual void writeFillPath(tvg_style_t& s)
 {
 	writeStyle("Fill", s);
 	printf("    ctx.fillPath(segment);\n");
 }
 
-void writeStrokePath(tvg_style_t& s, float lineWidth)
+virtual void writeStrokePath(tvg_style_t& s, float lineWidth)
 {
 	printf("  ctx.setStrokeWidth(%3.3f);\n", lineWidth);
 	writeStyle("Stroke", s);
 	printf("  ctx.strokePath(segment);\n");
 }
 
-void writeCommand(tvg_command_t& cmd)
+virtual void writeCommand(tvg_command_t& cmd)
 {
-	writeSegmentBegin();
-	writeContours(cmd.contours);
+	writeContours(cmd);
 
 	switch (cmd.command) {
 		case Commands::DrawLinePath:
@@ -200,11 +237,11 @@ void writeCommand(tvg_command_t& cmd)
 		break;
 	}
 	
-	writeSegmentEnd();
+	writePathEnd();
 }
 
 
-void writeTokens(tvgscanner &scanner)
+virtual void writeTokens(tvgscanner &scanner)
 {
 	while (true)
 	{
@@ -216,28 +253,5 @@ void writeTokens(tvgscanner &scanner)
 	}
 }
 
-void writeFiddlerHeader(tvg_header_t &header)
-{
-	printf("BLImage render(const BLContextCreateInfo & cci) {\n");
-	printf("  BLImage img(%d, %d, BL_FORMAT_PRGB32);\n", header.width, header.height);
-	printf("  BLContext ctx(img, cci);\n");
-	printf("  ctx.clearAll();\n");
-	printf("  ctx.setFillStyle(BLRgba32(0xFFffffff));\n");
-	printf("  ctx.fillAll();\n");
 
-	printf("\n  BLPoint vtxOut;\n");
-}
-
-void writeFiddlerFooter()
-{
-	printf("  return img;\n");
-	printf("}\n");
-}
-
-// Draw the entire thing in one shot
-void writeFiddler(tvgscanner& p)
-{
-	writeFiddlerHeader(p.header);
-	writeTokens(p);
-	writeFiddlerFooter();
-}
+};

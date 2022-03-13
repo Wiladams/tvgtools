@@ -4,7 +4,7 @@
 //
 
 #include "filestream.h"
-#include "blend2dfiddlerencoder.h"
+#include "svgencoder.h"
 
 using namespace tvg;
 
@@ -24,7 +24,7 @@ int main(int argc, char **argv)
 		return 1;
 	}
 
-	Blend2dFiddlerEncoder encoder;
+	SVGEncoder encoder;
 	encoder.writeDocument(scanner);
 	
 	return 0;
